@@ -36,4 +36,6 @@ snippets for the back end story that I completed.
 <p>Aligned the buttons on the new user page so they show as a row instead of 
  a column. I also, made a small aesthetic change to one of the input labels.</p>
  
+ ![B4Buttons](https://user-images.githubusercontent.com/46905735/68080356-0d919d00-fdb7-11e9-81c9-342047248935.png)
+ 
  
