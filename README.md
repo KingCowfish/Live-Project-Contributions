@@ -1,7 +1,5 @@
 # Live-Project-Contributions
 
-<hr>
-
 <h3>Introduction</h3>
 
 <hr>
@@ -26,3 +24,16 @@ Below are descriptions for the stories that I worked on, some before
 and after photos of the front end stories, as well as some code
 snippets for the back end story that I completed.
 </p>
+
+<hr>
+
+<h3>Front End Stories</h3>
+
+<hr>
+
+<h4>New User Button Alignment</h4>
+
+<p>Aligned the buttons on the new user page so they show as a row instead of 
+ a column. I also, made a small aesthetic change to one of the input labels.</p>
+ 
+ 
