@@ -36,8 +36,20 @@ snippets for the back end story that I completed.
 <p>Aligned the buttons on the new user page so they show as a row instead of 
  a column. I also, made a small aesthetic change to one of the input labels.</p>
  
+ <h5>Before:</h5>
+ 
  ![B4Buttons](https://user-images.githubusercontent.com/46905735/68080356-0d919d00-fdb7-11e9-81c9-342047248935.png)
  
+ <h5>After:</h5>
+
+![AfterButtons](https://user-images.githubusercontent.com/46905735/68080376-809b1380-fdb7-11e9-88cd-0e0db1b33e93.png)
+
+
+![B4Homepage](https://user-images.githubusercontent.com/46905735/68080379-84c73100-fdb7-11e9-91a4-6698c1741b88.png)
+![AfterHomepage](https://user-images.githubusercontent.com/46905735/68080384-9577a700-fdb7-11e9-9c84-cb4ea271debd.png)
+![B4Combine](https://user-images.githubusercontent.com/46905735/68080396-bcce7400-fdb7-11e9-9c99-3a4a46822e52.png)
+![AfterCombine](https://user-images.githubusercontent.com/46905735/68080434-5b5ad500-fdb8-11e9-8faa-e2b9d0ac4d13.png)
+
  
  <pre><code> 
  uighkuygh
