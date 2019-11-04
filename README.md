@@ -4,24 +4,12 @@
 
 <hr>
 
-<p>My first foray into collaborative software development took place 
-during my time at The Tech Academy when they had me work with my 
-fellow students on a full scale MVC application in C#.  Not only was 
-it a great opportunity to add features and fix bugs, but it was
-also helpful in incrasing my confidence by teaching me that I am 
-capable of this sort of work and in introducing me to software 
-development on a professional level.
+<p>My first foray into collaborative software development took place during my time at The Tech Academy when they had me work with my fellow students on a full scale MVC application in C#.  Not only was it a great opportunity to add features and fix bugs, but it was
+also helpful in incrasing my confidence by teaching me that I am capable of this sort of work and in introducing me to software development on a professional level.
 
-The two week sprint allowed each student to work on both front and 
-back end stories for an employee management website for a construction
-company.  During the week we would have daily standup meetings and
-at the end of each week we would have a sprint retrospective. Due to 
-my own personal time constraints, I focused a bit more on 
-<a href="#front-end-stories">front end</a> stories though I did complete 
-one <a href="#back-end-stories">back end</a> story that I am proud of.
+The two week sprint allowed each student to work on both front and back end stories for an employee management website for a construction company.  During the week we would have daily standup meetings and at the end of each week we would have a sprint retrospective.  Due to my own personal time constraints, I focused a bit more on <a href="#front-end-stories">front end</a> stories though I did complete one <a href="#back-end-stories">back end</a> story that I am proud of.
 
-Below are descriptions for the stories that I worked on, some before
-and after photos of the front end stories, as well as some code
+Below are descriptions for the stories that I worked on, some before and after photos of the front end stories, as well as some code
 snippets for the back end story that I completed.
 </p>
 
@@ -77,7 +65,7 @@ snippets for the back end story that I completed.
 
 
 <a id="user-content-back-end-stories" class="anchor" aria-hidden="true" href="#back-end-stories"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>
-<h3>Front End Stories</h3>
+<h3>Back End Stories</h3>
 
 <hr>
 
@@ -89,8 +77,10 @@ snippets for the back end story that I completed.
 
 ![B4Filter](https://user-images.githubusercontent.com/46905735/68101468-a50ff200-fe82-11e9-82f4-7ee3b85dbca9.png)
 
-<h4>Code For Non-Admin Partial View:</h4>
-<pre><code>
+<p>The following is the code for the partial view that I created for the non-admin user to see:</p>
+
+<pre>
+<code>
 @using ManagementPortal.Helpers
 @using ManagementPortal.Enums
 
@@ -189,11 +179,13 @@ else
 {
     <p>You must be logged in to see jobs.</p>
 }
-</code></pre>
+</code>
+</pre>
 
-<h4>Code Snippet On Dashboard View Which Determined Which View The User Would See:</h4>
+<p>The following is the code snippet found on the Dashboard VIew that determined which user was making the information request:</p>
 
-<pre><code>
+<pre>
+<code>
 <div class="card-body" id="cardbodyBackground">
 
     @*separates views depending on user.*@
@@ -210,11 +202,13 @@ else
         { Html.RenderAction("_MySchedule", "Schedules"); }
     }
 </div>
-</code></pre>
+</code>
+</pre>
 
-<h4>Code Snippet Of Controller Change Which Allowed View Update To Function Properly:</h4>
+<h4>The following is a code snippet of how the Schedule Controller handled the whole request for information:</p>
 
-<pre><code>
+<pre>
+<code>
 [ChildActionOnly]
 public ActionResult _MySchedule()
 {
@@ -242,9 +236,11 @@ public ActionResult _MySchedule()
         return View("Error");
     }            
 }
-</code></pre>
+</code>
+</pre>
 
-<h4>Non-Admin User View:</h4>
+
+<p>After all that was processed, this is what the non-admin user got to see:</p>
 
 ![AfterFilter](https://user-images.githubusercontent.com/46905735/68101718-e6ed6800-fe83-11e9-9e6c-2c3f907c4602.png)
  
