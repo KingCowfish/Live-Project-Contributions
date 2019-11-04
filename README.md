@@ -22,8 +22,7 @@ snippets for the back end story that I completed.
 
 <h4>New User Button Alignment</h4>
 
-<p>I aligned the buttons on the new user page so they show as a row instead of 
- a column. I also, made a small aesthetic change to one of the input labels.</p>
+<p>I aligned the buttons on the new user page so they show as a row instead of a column. I also, made a small aesthetic change to one of the input labels.</p>
  
 <h4>Before:</h4>
  
@@ -37,7 +36,7 @@ snippets for the back end story that I completed.
 
 <h4>Homepage Realignment</h4>
 
-<p>I made the home page jumbotron more aesthetically pleasing by having it align with the buttons on the bottom of the page</p>
+<p>I made the home page jumbotron more aesthetically pleasing by having it align with the buttons on the bottom of the page.</p>
 
 <h4>Before:</h4>
 
@@ -52,7 +51,7 @@ snippets for the back end story that I completed.
 <h4>Details Page Update</h4>
 
 <p>The page detailing information for a specific job was pretty all over the place so I combined everything in one simple, more 
- elegant format</p>
+ elegant format.</p>
  
 <h4>Before:</h4>
  
@@ -138,4 +137,4 @@ snippets for the back end story that I completed.
 
 <hr>
 
-<p>Overall, my Live Project at The Tech Academy was a fantastic and invaluable experience which gave me the confidence and skills to succeed in my future endeavors as a Junior Developer!</p>
+<p>Overall, my Live Project at The Tech Academy was a fantastic and invaluable experience which gave me the confidence and skills to succeed in my future endeavors as a Junior Software Developer!</p>
