@@ -13,7 +13,7 @@ capable of this sort of work and in introducing me to software
 development on a professional level.
 
 The two week sprint allowed each student to work on both front and 
-back end stories for a employee management website for a construction
+back end stories for an employee management website for a construction
 company.  During the week we would have daily standup meetings and
 at the end of each week we would have a sprint retrospective. Due to 
 my own personal time constraints, I focused a bit more on 
