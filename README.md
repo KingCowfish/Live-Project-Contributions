@@ -81,104 +81,104 @@ snippets for the back end story that I completed.
 
 <pre>
 <code>
-@using ManagementPortal.Helpers
-@using ManagementPortal.Enums
+     @using ManagementPortal.Helpers
+     @using ManagementPortal.Enums
 
 
-@model ManagementPortal.ViewModels.MySchedulesVM
+     @model ManagementPortal.ViewModels.MySchedulesVM
 
-@if (Model.hasJobs)
-{
-    <div class="card card-shadow mb-3">
-        <div class="card-header">
-            <h4>Managing</h4>
-        </div>
-        <div class="card-body">
-            @if (Model.managedJobs.Count > 0)
-            {
-                <table class="table w-100">
-                    <tr>
-                        <th>Title</th>
-                        <th>Job Type</th>
-                        <th>Location</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Notes</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    @foreach (var job in Model.managedJobs)
-                    {
-                    <tr>
-                        <td> @Html.DisplayFor(m => job.JobTitle) </td>
-                        <td> @Html.DisplayFor(m => job.JobType) </td>
-                        <td> @Html.DisplayFor(m => job.Location.SiteName) </td>
-                        @foreach (var schedule in job.Schedules)
-                        {
-                            <td> @Html.DisplayFor(m => schedule.StartDate) </td>
-                            <td> @Html.DisplayFor(m => schedule.EndDate) </td>
-                        }
-                        <td> @Html.DisplayFor(m => job.Details.Note) </td>
+     @if (Model.hasJobs)
+     {
+         <div class="card card-shadow mb-3">
+             <div class="card-header">
+                 <h4>Managing</h4>
+             </div>
+             <div class="card-body">
+                 @if (Model.managedJobs.Count > 0)
+                 {
+                     <table class="table w-100">
+                         <tr>
+                             <th>Title</th>
+                             <th>Job Type</th>
+                             <th>Location</th>
+                             <th>Start Date</th>
+                             <th>End Date</th>
+                             <th>Notes</th>
+                             <th>&nbsp;</th>
+                         </tr>
+                         @foreach (var job in Model.managedJobs)
+                         {
+                         <tr>
+                             <td> @Html.DisplayFor(m => job.JobTitle) </td>
+                             <td> @Html.DisplayFor(m => job.JobType) </td>
+                             <td> @Html.DisplayFor(m => job.Location.SiteName) </td>
+                             @foreach (var schedule in job.Schedules)
+                             {
+                                 <td> @Html.DisplayFor(m => schedule.StartDate) </td>
+                                 <td> @Html.DisplayFor(m => schedule.EndDate) </td>
+                             }
+                             <td> @Html.DisplayFor(m => job.Details.Note) </td>
 
-                        <td class="text-right">
-                            @Html.AnchorButton(AnchorType.Details, Url.Action("Details", "Jobs", new { id = job.JobIb }))
-                            @Html.AnchorButton(AnchorType.Edit, Url.Action("Edit", "Jobs", new { id = job.JobIb }))
-                            @Html.AnchorButton(AnchorType.Delete, Url.Action("Delete", "Jobs", new { id = job.JobIb }))
-                        </td>
-                    </tr>
-                    }
-                </table>
-            }
-            else
-            {
-                <p>You are not currently managing any jobs.</p>
-            }
-        </div>
-    </div>
+                             <td class="text-right">
+                                 @Html.AnchorButton(AnchorType.Details, Url.Action("Details", "Jobs", new { id = job.JobIb }))
+                                 @Html.AnchorButton(AnchorType.Edit, Url.Action("Edit", "Jobs", new { id = job.JobIb }))
+                                 @Html.AnchorButton(AnchorType.Delete, Url.Action("Delete", "Jobs", new { id = job.JobIb }))
+                             </td>
+                         </tr>
+                         }
+                     </table>
+                 }
+                 else
+                 {
+                     <p>You are not currently managing any jobs.</p>
+                 }
+             </div>
+         </div>
 
-    <div class="card card-shadow">
-        <div class="card-header">
-            <h4>Working</h4>
-        </div>
-        <div class="card-body">
-            @if (Model.scheduledOnJobs.Count > 0)
-            {
-                <table class="table w-100">
-                    <tr>
-                        <th>Title</th>
-                        <th>Type</th>
-                        <th>Location</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                        <th>Notes</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    @foreach (var schedule in Model.scheduledOnJobs)
-                    {
-                    <tr>
-                        <td>@Html.DisplayFor(m => schedule.Job.JobTitle)</td>
-                        <td>@Html.DisplayFor(m => schedule.Job.JobType)</td>
-                        <td>@Html.DisplayFor(m => schedule.Job.Location.SiteName)</td>
-                        <td>@Html.DisplayFor(m => schedule.StartDate)</td>
-                        <td>@Html.DisplayFor(m => schedule.EndDate)</td>
-                        <td>@Html.DisplayFor(m => schedule.Job.Details.Note)</td>
-                        <td class="text-right">
-                            @Html.AnchorButton(AnchorType.Details, Url.Action("Details", "Jobs", new { id = schedule.Job.JobIb }))
-                        </td>
-                    </tr>
-                    }
-                </table>
-            }
-            else
-            {
-                <p>You are not currently scheduled for any jobs.</p>
-            }
-        </div>
-    </div>
-}
-else
-{
-    <p>You must be logged in to see jobs.</p>
-}
+         <div class="card card-shadow">
+             <div class="card-header">
+                 <h4>Working</h4>
+             </div>
+             <div class="card-body">
+                 @if (Model.scheduledOnJobs.Count > 0)
+                 {
+                     <table class="table w-100">
+                         <tr>
+                             <th>Title</th>
+                             <th>Type</th>
+                             <th>Location</th>
+                             <th>Start Date</th>
+                             <th>End Date</th>
+                             <th>Notes</th>
+                             <th>&nbsp;</th>
+                         </tr>
+                         @foreach (var schedule in Model.scheduledOnJobs)
+                         {
+                         <tr>
+                             <td>@Html.DisplayFor(m => schedule.Job.JobTitle)</td>
+                             <td>@Html.DisplayFor(m => schedule.Job.JobType)</td>
+                             <td>@Html.DisplayFor(m => schedule.Job.Location.SiteName)</td>
+                             <td>@Html.DisplayFor(m => schedule.StartDate)</td>
+                             <td>@Html.DisplayFor(m => schedule.EndDate)</td>
+                             <td>@Html.DisplayFor(m => schedule.Job.Details.Note)</td>
+                             <td class="text-right">
+                                 @Html.AnchorButton(AnchorType.Details, Url.Action("Details", "Jobs", new { id = schedule.Job.JobIb }))
+                             </td>
+                         </tr>
+                         }
+                     </table>
+                 }
+                 else
+                 {
+                     <p>You are not currently scheduled for any jobs.</p>
+                 }
+             </div>
+         </div>
+     }
+     else
+     {
+         <p>You must be logged in to see jobs.</p>
+     }
 </code>
 </pre>
 
@@ -186,22 +186,22 @@ else
 
 <pre>
 <code>
-<div class="card-body" id="cardbodyBackground">
+    <div class="card-body" id="cardbodyBackground">
 
-    @*separates views depending on user.*@
+        @*separates views depending on user.*@
 
-    @if (User.IsInRole("Admin"))
-    {
-        <div class="card-header">
-            <h3 class="text-white">Active Jobs</h3>
-        </div>
-        Html.RenderAction("_Schedules", "Schedules");
-    }
-    else
-    {
-        { Html.RenderAction("_MySchedule", "Schedules"); }
-    }
-</div>
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="card-header">
+                <h3 class="text-white">Active Jobs</h3>
+            </div>
+            Html.RenderAction("_Schedules", "Schedules");
+        }
+        else
+        {
+            { Html.RenderAction("_MySchedule", "Schedules"); }
+        }
+    </div>
 </code>
 </pre>
 
@@ -209,33 +209,33 @@ else
 
 <pre>
 <code>
-[ChildActionOnly]
-public ActionResult _MySchedule()
-{
-    // initialize a view model. the VM has a default false value for hasJobs.
-    var viewModel = new MySchedulesVM();
+     [ChildActionOnly]
+     public ActionResult _MySchedule()
+     {
+         // initialize a view model. the VM has a default false value for hasJobs.
+         var viewModel = new MySchedulesVM();
 
-    // get the currently logged in userId, and then find the jobs associated with the use.
-    // pass them into a view model, and ultimately the partial view
-    var userId = User.Identity.GetUserId();
+         // get the currently logged in userId, and then find the jobs associated with the use.
+         // pass them into a view model, and ultimately the partial view
+         var userId = User.Identity.GetUserId();
 
-    // try/catch for null values in Schedule.EndDate and other possibilities.
-    try
-    {
-        if (userId != null)
-        {
-            viewModel.hasJobs = true;
-            viewModel.managedJobs = db.Jobs.Include(jd => jd.Details).Where(j => j.Manager.Id == userId).ToList();
-            viewModel.scheduledOnJobs = db.Schedules.Include(s => s.Job.Details).Where(s => s.Person.Id == userId).Where(s =>                       s.Job.Active == true).ToList();
-        }
+         // try/catch for null values in Schedule.EndDate and other possibilities.
+         try
+         {
+             if (userId != null)
+             {
+                 viewModel.hasJobs = true;
+                 viewModel.managedJobs = db.Jobs.Include(jd => jd.Details).Where(j => j.Manager.Id == userId).ToList();
+                 viewModel.scheduledOnJobs = db.Schedules.Include(s => s.Job.Details).Where(s => s.Person.Id == userId).Where(s =>                       s.Job.Active == true).ToList();
+             }
 
-        return PartialView("_MySchedule", viewModel);
-    }
-    catch (Exception ex)
-    {
-        return View("Error");
-    }            
-}
+             return PartialView("_MySchedule", viewModel);
+         }
+         catch (Exception ex)
+         {
+             return View("Error");
+         }            
+     }
 </code>
 </pre>
 
