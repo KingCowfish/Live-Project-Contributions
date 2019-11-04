@@ -69,125 +69,22 @@ snippets for the back end story that I completed.
 
 <hr>
 
-<h4>User View Update</h4>
+<h4>User View Filter</h4>
 
-<p>The original code made it so that no matter who was logged in, that user saw the same saw information as everyone else.  I updated this by creating a new view for those who were not an admin for the site.  The following will show the code snippets I used as well as what each user saw.</p>
+<p>The original code made it so that no matter who was logged in, that user saw the same information as everyone else.  I updated this by creating a new view for those who were not an admin for the site.  The following images and code snippets shows the updates that I made:</p>
 
-<h4>Original Schedule View (became view for only the Admin user):</h4>
+<h4>Original Schedule View (became view for only the admin user):</h4>
 
 ![B4Filter](https://user-images.githubusercontent.com/46905735/68101468-a50ff200-fe82-11e9-82f4-7ee3b85dbca9.png)
 
-<p>The following is the code for the partial view that I created for the non-admin user to see:</p>
+<p>New View For Non-Admin User:</p>
+
+![AfterFilter](https://user-images.githubusercontent.com/46905735/68101718-e6ed6800-fe83-11e9-9e6c-2c3f907c4602.png)
+
+<p>The following is the code snippet found on the Dashboard View that determined which user was making the information request:</p>
 
 <pre>
 <code>
-     @using ManagementPortal.Helpers
-     @using ManagementPortal.Enums
-
-
-     @model ManagementPortal.ViewModels.MySchedulesVM
-
-     @if (Model.hasJobs)
-     {
-         <div class="card card-shadow mb-3">
-             <div class="card-header">
-                 <h4>Managing</h4>
-             </div>
-             <div class="card-body">
-                 @if (Model.managedJobs.Count > 0)
-                 {
-                     <table class="table w-100">
-                         <tr>
-                             <th>Title</th>
-                             <th>Job Type</th>
-                             <th>Location</th>
-                             <th>Start Date</th>
-                             <th>End Date</th>
-                             <th>Notes</th>
-                             <th>&nbsp;</th>
-                         </tr>
-                         @foreach (var job in Model.managedJobs)
-                         {
-                         <tr>
-                             <td> @Html.DisplayFor(m => job.JobTitle) </td>
-                             <td> @Html.DisplayFor(m => job.JobType) </td>
-                             <td> @Html.DisplayFor(m => job.Location.SiteName) </td>
-                             @foreach (var schedule in job.Schedules)
-                             {
-                                 <td> @Html.DisplayFor(m => schedule.StartDate) </td>
-                                 <td> @Html.DisplayFor(m => schedule.EndDate) </td>
-                             }
-                             <td> @Html.DisplayFor(m => job.Details.Note) </td>
-
-                             <td class="text-right">
-                                 @Html.AnchorButton(AnchorType.Details, Url.Action("Details", "Jobs", new { id = job.JobIb }))
-                                 @Html.AnchorButton(AnchorType.Edit, Url.Action("Edit", "Jobs", new { id = job.JobIb }))
-                                 @Html.AnchorButton(AnchorType.Delete, Url.Action("Delete", "Jobs", new { id = job.JobIb }))
-                             </td>
-                         </tr>
-                         }
-                     </table>
-                 }
-                 else
-                 {
-                     <p>You are not currently managing any jobs.</p>
-                 }
-             </div>
-         </div>
-
-         <div class="card card-shadow">
-             <div class="card-header">
-                 <h4>Working</h4>
-             </div>
-             <div class="card-body">
-                 @if (Model.scheduledOnJobs.Count > 0)
-                 {
-                     <table class="table w-100">
-                         <tr>
-                             <th>Title</th>
-                             <th>Type</th>
-                             <th>Location</th>
-                             <th>Start Date</th>
-                             <th>End Date</th>
-                             <th>Notes</th>
-                             <th>&nbsp;</th>
-                         </tr>
-                         @foreach (var schedule in Model.scheduledOnJobs)
-                         {
-                         <tr>
-                             <td>@Html.DisplayFor(m => schedule.Job.JobTitle)</td>
-                             <td>@Html.DisplayFor(m => schedule.Job.JobType)</td>
-                             <td>@Html.DisplayFor(m => schedule.Job.Location.SiteName)</td>
-                             <td>@Html.DisplayFor(m => schedule.StartDate)</td>
-                             <td>@Html.DisplayFor(m => schedule.EndDate)</td>
-                             <td>@Html.DisplayFor(m => schedule.Job.Details.Note)</td>
-                             <td class="text-right">
-                                 @Html.AnchorButton(AnchorType.Details, Url.Action("Details", "Jobs", new { id = schedule.Job.JobIb }))
-                             </td>
-                         </tr>
-                         }
-                     </table>
-                 }
-                 else
-                 {
-                     <p>You are not currently scheduled for any jobs.</p>
-                 }
-             </div>
-         </div>
-     }
-     else
-     {
-         <p>You must be logged in to see jobs.</p>
-     }
-</code>
-</pre>
-
-<p>The following is the code snippet found on the Dashboard VIew that determined which user was making the information request:</p>
-
-<pre>
-<code>
-    <div class="card-body" id="cardbodyBackground">
-
         @*separates views depending on user.*@
 
         @if (User.IsInRole("Admin"))
@@ -201,11 +98,10 @@ snippets for the back end story that I completed.
         {
             { Html.RenderAction("_MySchedule", "Schedules"); }
         }
-    </div>
 </code>
 </pre>
 
-<h4>The following is a code snippet of how the Schedule Controller handled the whole request for information:</p>
+<p>The following is a code snippet for how the Schedule Controller handled the whole user filter:</p>
 
 <pre>
 <code>
@@ -238,10 +134,3 @@ snippets for the back end story that I completed.
      }
 </code>
 </pre>
-
-
-<p>After all that was processed, this is what the non-admin user got to see:</p>
-
-![AfterFilter](https://user-images.githubusercontent.com/46905735/68101718-e6ed6800-fe83-11e9-9e6c-2c3f907c4602.png)
- 
- 
