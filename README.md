@@ -77,7 +77,7 @@ snippets for the back end story that I completed.
 
 ![B4Filter](https://user-images.githubusercontent.com/46905735/68101468-a50ff200-fe82-11e9-82f4-7ee3b85dbca9.png)
 
-<p>New View For Non-Admin User:</p>
+<h4>New View For Non-Admin User:</h4>
 
 ![AfterFilter](https://user-images.githubusercontent.com/46905735/68101718-e6ed6800-fe83-11e9-9e6c-2c3f907c4602.png)
 
@@ -89,9 +89,6 @@ snippets for the back end story that I completed.
 
         @if (User.IsInRole("Admin"))
         {
-            <div class="card-header">
-                <h3 class="text-white">Active Jobs</h3>
-            </div>
             Html.RenderAction("_Schedules", "Schedules");
         }
         else
@@ -134,3 +131,11 @@ snippets for the back end story that I completed.
      }
 </code>
 </pre>
+
+
+
+<h3>Summary</h3>
+
+<hr>
+
+<p>Overall, my Live Project at The Tech Academy was a fantastic and invaluable experience which gave me the confidence and skills to succeed in my future endeavors as a Junior Developer!</p>
