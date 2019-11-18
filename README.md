@@ -131,7 +131,55 @@ snippets for the back end story that I completed.
 </code>
 </pre>
 
+<h4>Job Creation Filters</h4>
 
+<p>The job creation page had some issues in that there were multiple optional parameters that did not allow for null values (including the application crashing if no shift time was input), and the manager drop down menu held employees that were neither a manager nor an administrator.  I updated all of these aspects in the following code snippets:</p>
+
+<pre>
+<code>
+     //Commented out the "required" property as it causes the ModelState to become false if a null value is
+     //entered into the Weekly Shifts portion of the Create Job form.
+     //[Required] 
+     [MaxLength(100)]
+     [StringLength(100, MinimumLength = 1, ErrorMessage = "Please enter a default shift time.")]
+     [Display(Name = "Default")]
+     public string Default { get; set; }
+
+</code>
+</pre>
+
+<pre>
+<code>
+     private void PopulateJobDropDowns(object model, int JobId = 1, string UserId = null)
+     {
+         List<SelectListItem> jobSites = new SelectList(db.JobSites, "JobSiteID", "SiteName", JobId).ToList();
+         //Adds null choice in drop down menu.
+         jobSites.Insert(0, (new SelectListItem { Text = "--None--", Value = "0" }));
+         ViewData["JobSites"] = jobSites;
+
+         List<SelectListItem> users;
+         if (UserId == null)
+         {
+             //filters drop downs to only include Managers and Admins who are not suspended.
+             users = new SelectList(from c in db.Users
+                                    where (c.UserRole == "Manager" || c.UserRole == "Admin") && c.Suspended == false
+                                    select c, "Id", "FullName").ToList();
+             //Adds null choice in drop down menu.
+             users.Insert(0, (new SelectListItem { Text = "--None--", Value = "0" }));
+         }
+         else
+         {
+             //filters drop downs to only include Managers and Admins who are not suspended.
+             users = new SelectList(from c in db.Users
+                                    where (c.UserRole == "Manager" || c.UserRole == "Admin") && c.Suspended == false
+                                    select c, "Id", "FullName").ToList();
+             //Adds null choice in drop down menu.
+             users.Insert(0, (new SelectListItem { Text = "--None--", Value = "0" }));
+         }
+         ViewData["Users"] = users;
+     }
+</code>
+</pre>
 
 <h3>Summary</h3>
 
