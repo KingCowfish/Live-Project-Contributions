@@ -4,10 +4,9 @@
 
 <hr>
 
-<p>My first foray into collaborative software development took place during my time at The Tech Academy when they had me work with my fellow students on a full scale MVC application in C#.  Not only was it a great opportunity to add features and fix bugs, but it was
-also helpful in increasing my confidence by teaching me that I am capable of this sort of work and in introducing me to software development on a professional level.
+<p>My first foray into collaborative software development took place during my time with Prosper IT Consulting when they had me work with fellow developers on a full scale MVC application in C#.  Not only was it a great opportunity to add features and fix bugs, but it was also helpful in increasing my confidence by teaching me that I am capable of this sort of work and in introducing me to software development on a professional level.
 
-The two week sprint allowed each student to work on both front and back end stories for an employee management website for a construction company.  During the week we would have daily standup meetings and at the end of each week we would have a sprint retrospective.  Due to my own personal time constraints, I focused a bit more on <a href="#front-end-stories">front end</a> stories though I did complete one <a href="#back-end-stories">back end</a> story that I am proud of.
+The two week sprint allowed each developer to work on both front and back end stories for an employee management website for a construction company.  During the week we would have daily standup meetings and at the end of each week we would have a sprint retrospective.  Due to my own personal time constraints, I focused a bit more on <a href="#front-end-stories">front end</a> stories though I did complete one <a href="#back-end-stories">back end</a> story that I am proud of.
 
 Below are descriptions for the stories that I worked on, some before and after photos of the front end stories, as well as some code
 snippets for the back end story that I completed.
@@ -185,4 +184,4 @@ snippets for the back end story that I completed.
 
 <hr>
 
-<p>Overall, my Live Project at The Tech Academy was a fantastic and invaluable experience which gave me the confidence and skills to succeed in my future endeavors as a Junior Software Developer!</p>
+<p>Overall, my Live Project at Prosper IT Consulting was a fantastic and invaluable experience which gave me the confidence and skills to succeed in my future endeavors as a Software Developer!</p>
